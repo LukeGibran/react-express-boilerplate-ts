@@ -8,11 +8,8 @@ import TypescriptImage from './assets/img/typescript.png';
 import Sample from './components/Sample';
 
 const App = () => {
-  const [status, setStatus] = useState({
-    msg: '',
-  });
+  const [status, setStatus] = useState('');
 
-  const { msg } = status;
   useEffect(() => {
     checkServerStatus();
     // eslint-disable-next-line
@@ -23,10 +20,10 @@ const App = () => {
       const res = await fetch('/api/welcome');
       const data = await res.json();
 
-      setStatus({ ...status, msg: data.msg });
+      setStatus(data.msg);
     } catch (err) {
       console.log(err);
-      setStatus({ ...status, msg: 'Disconnected' });
+      setStatus('Disconnected');
     }
   };
   return (
@@ -43,8 +40,8 @@ const App = () => {
 
       <h2>
         Server:{' '}
-        <span className={msg === 'Disconnected' ? 'danger' : 'success'}>
-          {msg}
+        <span className={status === 'Disconnected' ? 'danger' : 'success'}>
+          {status}
         </span>
       </h2>
       <Sample />
