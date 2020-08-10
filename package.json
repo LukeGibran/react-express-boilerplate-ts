@@ -1,0 +1,26 @@
+{
+  "name": "fullstack_react_express_boiler_plate",
+  "version": "1.0.0",
+  "description": "My simple boiler plate for my project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server/JS/server.js",
+    "server": "nodemon --exec ts-node server/TS/server.ts",
+    "dev": "ts-node-dev --respawn server/TS/server.ts",
+    "build": "tsc -p ."
+  },
+  "author": "Liuk Jhivran Tulawie",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.5",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.1",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "typescript": "^3.9.3"
+  }
+}
